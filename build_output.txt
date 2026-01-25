@@ -1,0 +1,440 @@
+Processing esp32-s3-devkitc-1 (platform: espressif32; board: esp32-s3-devkitc-1; framework: arduino)
+--------------------------------------------------------------------------------
+Platform Manager: Installing espressif32
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Platform Manager: espressif32@6.12.0 has been installed!
+Tool Manager: Installing espressif/toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: toolchain-xtensa-esp32s3@8.4.0+2021r2-patch5 has been installed!
+Tool Manager: Installing espressif/toolchain-riscv32-esp @ 8.4.0+2021r2-patch5
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: toolchain-riscv32-esp@8.4.0+2021r2-patch5 has been installed!
+Tool Manager: Installing platformio/framework-arduinoespressif32 @ ~3.20017.0
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: framework-arduinoespressif32@3.20017.241212+sha.dcc1105b has been installed!
+Tool Manager: Installing platformio/tool-esptoolpy @ ~2.40900.0
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Collecting cryptography~=45.0.3
+  Downloading cryptography-45.0.7-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Collecting ecdsa~=0.19.1
+  Downloading ecdsa-0.19.1-py2.py3-none-any.whl.metadata (29 kB)
+Collecting bitstring~=4.3.1
+  Downloading bitstring-4.3.1-py3-none-any.whl.metadata (5.3 kB)
+Collecting reedsolo~=1.7.0
+  Downloading reedsolo-1.7.0-py3-none-any.whl.metadata (23 kB)
+Collecting intelhex~=2.3.0
+  Downloading intelhex-2.3.0-py2.py3-none-any.whl.metadata (2.7 kB)
+Collecting cffi>=1.14 (from cryptography~=45.0.3)
+  Using cached cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting six>=1.9.0 (from ecdsa~=0.19.1)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting bitarray<4.0,>=3.0.0 (from bitstring~=4.3.1)
+  Downloading bitarray-3.8.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (34 kB)
+Collecting pycparser (from cffi>=1.14->cryptography~=45.0.3)
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Downloading cryptography-45.0.7-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 75.9 MB/s  0:00:00
+Downloading ecdsa-0.19.1-py2.py3-none-any.whl (150 kB)
+Downloading bitstring-4.3.1-py3-none-any.whl (71 kB)
+Downloading reedsolo-1.7.0-py3-none-any.whl (32 kB)
+Downloading intelhex-2.3.0-py2.py3-none-any.whl (50 kB)
+Downloading bitarray-3.8.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (340 kB)
+Using cached cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Installing collected packages: reedsolo, intelhex, bitarray, six, pycparser, bitstring, ecdsa, cffi, cryptography
+
+Successfully installed bitarray-3.8.0 bitstring-4.3.1 cffi-2.0.0 cryptography-45.0.7 ecdsa-0.19.1 intelhex-2.3.0 pycparser-3.0 reedsolo-1.7.0 six-1.17.0
+Tool Manager: tool-esptoolpy@2.40900.250804 has been installed!
+Library Manager: Installing bblanchon/ArduinoJson @ ^6.21.3
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: ArduinoJson@6.21.5 has been installed!
+Library Manager: Installing esphome/AsyncTCP-esphome @ ^2.0.0
+Downloading 0% 10% 20% 30%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: AsyncTCP-esphome@2.1.4 has been installed!
+Library Manager: Installing esphome/ESPAsyncWebServer-esphome @ ^3.0.0
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: ESPAsyncWebServer-esphome@3.4.0 has been installed!
+Library Manager: Resolving dependencies...
+Library Manager: Installing marvinroger/AsyncMqttClient @ ^0.9.0
+Downloading 0% 10% 20% 30%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: AsyncMqttClient@0.9.0 has been installed!
+Library Manager: Resolving dependencies...
+Library Manager: Installing AsyncTCP @ >=1.1.1
+Library Manager: Warning! More than one package has been found by AsyncTCP @ >=1.1.1 requirements:
+Library Manager:  - esp32async/AsyncTCP@3.4.10
+Library Manager:  - me-no-dev/AsyncTCP@3.3.2
+Library Manager:  - mathieucarbou/AsyncTCP@3.3.2
+Library Manager:  - willmmiles/AsyncTCP@1.3.1
+Library Manager:  - kubafilinger/AsyncTCP@1.1.1
+Library Manager:  - zeed/AsyncTCP@1.1.1
+Library Manager:  - tiotlab/AsyncTCP@1.1.1
+Library Manager: Please specify detailed REQUIREMENTS using package owner and version (shown above) to avoid name conflicts
+Downloading 0% 10% 20% 30%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: AsyncTCP@3.4.10 has been installed!
+Library Manager: Installing gin66/FastAccelStepper @ ^0.30.5
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: FastAccelStepper@0.30.15 has been installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32-s3-devkitc-1.html
+PLATFORM: Espressif 32 (6.12.0) > Espressif ESP32-S3-DevKitC-1-N8 (8 MB QD, No PSRAM)
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (esp-builtin) On-board (esp-builtin) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES:
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b
+ - tool-esptoolpy @ 2.40900.250804 (4.9.0)
+ - toolchain-riscv32-esp @ 8.4.0+2021r2-patch5
+ - toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 39 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- ArduinoJson @ 6.21.5
+|-- AsyncTCP-esphome @ 2.1.4
+|-- ESPAsyncWebServer-esphome @ 3.4.0
+|-- AsyncMqttClient @ 0.9.0
+|-- FastAccelStepper @ 0.30.15
+|-- Preferences @ 2.0.0
+|-- WiFi @ 2.0.0
+Building in release mode
+Compiling .pio/build/esp32-s3-devkitc-1/src/application/BlindController.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/domain/Blind.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/infrastructure/FastAccelStepperMotor.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/infrastructure/GpioLimitSwitch.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/infrastructure/MqttClientWrapper.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/infrastructure/NvsStorage.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/infrastructure/WebServerManager.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/infrastructure/WifiNetwork.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/src/main.cpp.o
+Building .pio/build/esp32-s3-devkitc-1/bootloader.bin
+Generating partitions .pio/build/esp32-s3-devkitc-1/partitions.bin
+esptool.py v4.9.0
+Creating esp32s3 image...
+Merged 1 ELF section
+Successfully created esp32s3 image.
+Compiling .pio/build/esp32-s3-devkitc-1/lib32a/AsyncTCP-esphome/AsyncTCP.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib5eb/FS/FS.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib5eb/FS/vfs_api.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib4e9/AsyncTCP/AsyncTCP.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFi.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a
+Indexing .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiAP.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/lib5eb/libFS.a
+Indexing .pio/build/esp32-s3-devkitc-1/lib5eb/libFS.a
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiClient.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiGeneric.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiMulti.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a
+Indexing .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiSTA.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiScan.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiServer.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib85e/WiFi/WiFiUdp.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/AsyncEventSource.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/AsyncWebSocket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/WebAuthentication.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/lib85e/libWiFi.a
+Indexing .pio/build/esp32-s3-devkitc-1/lib85e/libWiFi.a
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/WebHandlers.cpp.o
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncEventSource.cpp: In member function 'void AsyncEventSourceClient::_onTimeout(uint32_t)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncEventSource.cpp:229:22: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+   _client->close(true);
+                      ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncEventSource.h:26,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncEventSource.cpp:21:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp: In member function 'void AsyncWebSocketClient::_onAck(size_t, uint32_t)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:503:28: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+         _client->close(true);
+                            ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.h:26,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:22:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp: In member function 'void AsyncWebSocketClient::_onTimeout(uint32_t)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:600:22: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+   _client->close(true);
+                      ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.h:26,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:22:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp: In member function 'void AsyncWebSocketClient::_onData(void*, size_t)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:670:30: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+           _client->close(true);
+                              ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.h:26,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:22:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp: In member function 'virtual void AsyncWebSocketResponse::_respond(AsyncWebServerRequest*)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:1284:34: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+     request->client()->close(true);
+                                  ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.h:26,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp:22:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/WebRequest.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/WebResponses.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libe05/ESPAsyncWebServer-esphome/WebServer.cpp.o
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebRequest.cpp: In member function 'void AsyncWebServerRequest::send(AsyncWebServerResponse*)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebRequest.cpp:714:24: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+     _client->close(true);
+                        ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/ESPAsyncWebServer.h:33,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebRequest.cpp:21:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient.cpp.o
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebResponses.cpp: In member function 'virtual size_t AsyncAbstractResponse::_ack(AsyncWebServerRequest*, size_t, uint32_t)':
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebResponses.cpp:361:38: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+         request->client()->close(true);
+                                      ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/ESPAsyncWebServer.h:33,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebResponses.cpp:21:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebServer.cpp: In lambda function:
+.pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebServer.cpp:47:20: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+       c->close(true);
+                    ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/ESPAsyncWebServer.h:33,
+                 from .pio/libdeps/esp32-s3-devkitc-1/ESPAsyncWebServer-esphome/src/WebServer.cpp:21:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+.pio/libdeps/esp32-s3-devkitc-1/AsyncMqttClient/src/AsyncMqttClient.cpp: In member function 'void AsyncMqttClient::disconnect(bool)':
+.pio/libdeps/esp32-s3-devkitc-1/AsyncMqttClient/src/AsyncMqttClient.cpp:712:23: warning: 'void AsyncClient::close(bool)' is deprecated: Use AsyncClient::close() instead [-Wdeprecated-declarations]
+     _client.close(true);
+                       ^
+In file included from .pio/libdeps/esp32-s3-devkitc-1/AsyncMqttClient/src/AsyncMqttClient.hpp:13,
+                 from .pio/libdeps/esp32-s3-devkitc-1/AsyncMqttClient/src/AsyncMqttClient.cpp:1:
+.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.h:109:8: note: declared here
+   void close(bool now) {
+        ^~~~~
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/ConnAckPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/Connect.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/libe05/libESPAsyncWebServer-esphome.a
+Indexing .pio/build/esp32-s3-devkitc-1/libe05/libESPAsyncWebServer-esphome.a
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/Disconn.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/OutPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/PingReq.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/PubAck.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/Publish.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/Subscribe.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/Out/Unsubscribe.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/PingRespPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/PubAckPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/PubCompPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/PubRecPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/PubRelPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/PublishPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/SubAckPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/lib75c/AsyncMqttClient/AsyncMqttClient/Packets/UnsubAckPacket.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/FastAccelStepper.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/PoorManFloat.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/RampCalculator.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/RampConstAcceleration.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/lib75c/libAsyncMqttClient.a
+Indexing .pio/build/esp32-s3-devkitc-1/lib75c/libAsyncMqttClient.a
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/RampGenerator.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_avr.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_due.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_esp32.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_esp32_mcpwm_pcnt.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_esp32_rmt.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_esp32c3_rmt.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/libbe2/FastAccelStepper/StepperISR_esp32s3_rmt.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/liba11/Preferences/Preferences.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/FirmwareMSC.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/libbe2/libFastAccelStepper.a
+Indexing .pio/build/esp32-s3-devkitc-1/libbe2/libFastAccelStepper.a
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/HWCDC.cpp.o
+Archiving .pio/build/esp32-s3-devkitc-1/liba11/libPreferences.a
+Indexing .pio/build/esp32-s3-devkitc-1/liba11/libPreferences.a
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/IPv6Address.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/MD5Builder.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/USBCDC.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/USBMSC.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/main.cpp.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/esp32-s3-devkitc-1/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/esp32-s3-devkitc-1/libFrameworkArduino.a
+Indexing .pio/build/esp32-s3-devkitc-1/libFrameworkArduino.a
+Linking .pio/build/esp32-s3-devkitc-1/firmware.elf
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::AsyncClient(tcp_pcb*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:757: multiple definition of `AsyncClient::AsyncClient(tcp_pcb*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:565: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::AsyncClient(tcp_pcb*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:757: multiple definition of `AsyncClient::AsyncClient(tcp_pcb*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:565: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::connect(char const*, unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:887: multiple definition of `AsyncClient::connect(char const*, unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:739: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::abort()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:929: multiple definition of `AsyncClient::abort()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:772: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::add(char const*, unsigned int, unsigned char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:941: multiple definition of `AsyncClient::add(char const*, unsigned int, unsigned char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:787: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::send()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:958: multiple definition of `AsyncClient::send()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:804: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::ack(unsigned int)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:968: multiple definition of `AsyncClient::ack(unsigned int)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:814: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::ackPacket(pbuf*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:979: multiple definition of `AsyncClient::ackPacket(pbuf*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:824: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_lwip_fin(tcp_pcb*, signed char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1029: multiple definition of `AsyncClient::_lwip_fin(tcp_pcb*, signed char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:920: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_sent(tcp_pcb*, unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1048: multiple definition of `AsyncClient::_sent(tcp_pcb*, unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:949: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_recv(tcp_pcb*, pbuf*, signed char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1056: multiple definition of `AsyncClient::_recv(tcp_pcb*, pbuf*, signed char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:959: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::free()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1135: multiple definition of `AsyncClient::free()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1045: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::write(char const*, unsigned int, unsigned char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1145: multiple definition of `AsyncClient::write(char const*, unsigned int, unsigned char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1062: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::setRxTimeout(unsigned int)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1153: multiple definition of `AsyncClient::setRxTimeout(unsigned int)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1070: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::setAckTimeout(unsigned int)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1165: multiple definition of `AsyncClient::setAckTimeout(unsigned int)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1082: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::getNoDelay()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1180: multiple definition of `AsyncClient::getNoDelay()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1097: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::errorToString(signed char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1401: multiple definition of `AsyncClient::errorToString(signed char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1238: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::AsyncServer(IPAddress, unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1449: multiple definition of `AsyncServer::AsyncServer(IPAddress, unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1318: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::AsyncServer(IPAddress, unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1449: multiple definition of `AsyncServer::AsyncServer(IPAddress, unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1318: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::AsyncServer(IPv6Address, unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1462: multiple definition of `AsyncServer::AsyncServer(IPv6Address, unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1328: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::AsyncServer(IPv6Address, unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1462: multiple definition of `AsyncServer::AsyncServer(IPv6Address, unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1328: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::AsyncServer(unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1472: multiple definition of `AsyncServer::AsyncServer(unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1338: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::AsyncServer(unsigned short)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1472: multiple definition of `AsyncServer::AsyncServer(unsigned short)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1338: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::begin()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1490: multiple definition of `AsyncServer::begin()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1359: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::end()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1532: multiple definition of `AsyncServer::end()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1407: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::~AsyncServer()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1481: multiple definition of `AsyncServer::~AsyncServer()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1350: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::~AsyncServer()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1481: multiple definition of `AsyncServer::~AsyncServer()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1350: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::setNoDelay(bool)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1595: multiple definition of `AsyncServer::setNoDelay(bool)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1442: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_error(signed char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1019: multiple definition of `AsyncClient::_error(signed char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:900: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_dns_found(ip_addr*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1118: multiple definition of `AsyncClient::_dns_found(ip_addr*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1020: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_close()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:991: multiple definition of `AsyncClient::_close()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:836: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::~AsyncClient()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:768: multiple definition of `AsyncClient::~AsyncClient()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:602: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::~AsyncClient()':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:768: multiple definition of `AsyncClient::~AsyncClient()'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:602: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_fin(tcp_pcb*, signed char)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1043: multiple definition of `AsyncClient::_fin(tcp_pcb*, signed char)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:941: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::_accepted(AsyncClient*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1588: multiple definition of `AsyncServer::_accepted(AsyncClient*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1435: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::_poll(tcp_pcb*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1081: multiple definition of `AsyncClient::_poll(tcp_pcb*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:984: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onConnect(std::function<void (void*, AsyncClient*)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:786: multiple definition of `AsyncClient::onConnect(std::function<void (void*, AsyncClient*)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:654: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onDisconnect(std::function<void (void*, AsyncClient*)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:791: multiple definition of `AsyncClient::onDisconnect(std::function<void (void*, AsyncClient*)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:659: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onPoll(std::function<void (void*, AsyncClient*)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:821: multiple definition of `AsyncClient::onPoll(std::function<void (void*, AsyncClient*)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:689: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncServer::onClient(std::function<void (void*, AsyncClient*)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:1485: multiple definition of `AsyncServer::onClient(std::function<void (void*, AsyncClient*)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:1354: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onAck(std::function<void (void*, AsyncClient*, unsigned int, unsigned int)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:796: multiple definition of `AsyncClient::onAck(std::function<void (void*, AsyncClient*, unsigned int, unsigned int)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:664: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onError(std::function<void (void*, AsyncClient*, signed char)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:801: multiple definition of `AsyncClient::onError(std::function<void (void*, AsyncClient*, signed char)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:669: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onData(std::function<void (void*, AsyncClient*, void*, unsigned int)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:806: multiple definition of `AsyncClient::onData(std::function<void (void*, AsyncClient*, void*, unsigned int)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:674: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onPacket(std::function<void (void*, AsyncClient*, pbuf*)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:811: multiple definition of `AsyncClient::onPacket(std::function<void (void*, AsyncClient*, pbuf*)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:679: first defined here
+/home/jules/.platformio/packages/toolchain-xtensa-esp32s3/bin/../lib/gcc/xtensa-esp32s3-elf/8.4.0/../../../../xtensa-esp32s3-elf/bin/ld: .pio/build/esp32-s3-devkitc-1/lib4e9/libAsyncTCP.a(AsyncTCP.cpp.o): in function `AsyncClient::onTimeout(std::function<void (void*, AsyncClient*, unsigned int)>, void*)':
+/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP/src/AsyncTCP.cpp:816: multiple definition of `AsyncClient::onTimeout(std::function<void (void*, AsyncClient*, unsigned int)>, void*)'; .pio/build/esp32-s3-devkitc-1/lib32a/libAsyncTCP-esphome.a(AsyncTCP.cpp.o):/app/.pio/libdeps/esp32-s3-devkitc-1/AsyncTCP-esphome/src/AsyncTCP.cpp:684: first defined here
+collect2: error: ld returned 1 exit status
+*** [.pio/build/esp32-s3-devkitc-1/firmware.elf] Error 1
+========================= [FAILED] Took 123.08 seconds =========================
+
+Processing native (platform: native)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 1 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+Compiling .pio/build/native/src/domain/Blind.o
+Linking .pio/build/native/program
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+*** [.pio/build/native/program] Error 1
+========================== [FAILED] Took 1.19 seconds ==========================
+
+Environment         Status    Duration
+------------------  --------  ------------
+esp32-s3-devkitc-1  FAILED    00:02:03.085
+native              FAILED    00:00:01.192
+==================== 2 failed, 0 succeeded in 00:02:04.277 ====================

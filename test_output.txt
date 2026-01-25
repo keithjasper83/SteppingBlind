@@ -1,0 +1,20 @@
+Verbosity level can be increased via `-v, -vv, or -vvv` option
+Collected 1 tests
+
+Processing * in native environment
+--------------------------------------------------------------------------------
+Building...
+Testing...
+test/test_domain.cpp:109: test_initialization_unknown	[PASSED]
+test/test_domain.cpp:110: test_initialization_restores_pos	[PASSED]
+test/test_domain.cpp:111: test_move_up	[PASSED]
+test/test_domain.cpp:112: test_move_down	[PASSED]
+test/test_domain.cpp:113: test_limit_switch_stops_up	[PASSED]
+test/test_domain.cpp:114: test_homing_sequence	[PASSED]
+--------------------- native:* [PASSED] Took 1.23 seconds ---------------------
+
+=================================== SUMMARY ===================================
+Environment    Test    Status    Duration
+-------------  ------  --------  ------------
+native         *       PASSED    00:00:01.231
+================== 6 test cases: 6 succeeded in 00:00:01.231 ==================
