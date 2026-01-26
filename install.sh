@@ -25,8 +25,26 @@ fi
 # 2. Clone or Update Repository
 if [ -d "$INSTALL_DIR" ]; then
     echo "Directory $INSTALL_DIR already exists."
-    echo "Updating existing installation..."
+    
+    # Check if it's a git repository
+    if [ ! -d "$INSTALL_DIR/.git" ]; then
+        echo "ERROR: $INSTALL_DIR exists but is not a git repository."
+        echo "Please remove it or choose a different installation directory."
+        exit 1
+    fi
+    
+    # Check if the remote origin URL matches
     cd "$INSTALL_DIR"
+    CURRENT_ORIGIN=$(git remote get-url origin 2>/dev/null || echo "")
+    if [ "$CURRENT_ORIGIN" != "$REPO_URL" ]; then
+        echo "ERROR: $INSTALL_DIR is a git repository with a different origin."
+        echo "Expected: $REPO_URL"
+        echo "Found:    $CURRENT_ORIGIN"
+        echo "Please remove it or choose a different installation directory."
+        exit 1
+    fi
+    
+    echo "Updating existing installation..."
     # We might not be on the right branch if the user messed with it
     git fetch origin
     git checkout "$BRANCH"
