@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 REPO_URL="https://github.com/keithjasper83/SteppingBlind.git"
 INSTALL_DIR="$HOME/blind-controller"
