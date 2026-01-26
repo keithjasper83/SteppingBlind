@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+jinja2
+pydantic
+paho-mqtt
+RPi.GPIO
+pytest
+python-dotenv
