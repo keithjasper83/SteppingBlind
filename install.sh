@@ -30,6 +30,27 @@ if [ -d "$INSTALL_DIR" ]; then
     # We might not be on the right branch if the user messed with it
     git fetch origin
     git checkout "$BRANCH"
+    
+    # Check if there are local changes that would be discarded
+    if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git log origin/$BRANCH..$BRANCH 2>/dev/null)" ]; then
+        echo ""
+        echo "=========================================="
+        echo "  WARNING: LOCAL CHANGES DETECTED"
+        echo "=========================================="
+        echo "The following will be permanently lost:"
+        echo "  - Any uncommitted changes"
+        echo "  - Any local commits not pushed to GitHub"
+        echo ""
+        echo "This operation will reset to origin/$BRANCH."
+        echo ""
+        read -p "Continue with reset? This cannot be undone! (yes/no): " -r
+        echo ""
+        if [[ ! $REPLY =~ ^[Yy][Ee][Ss]$ ]]; then
+            echo "Installation cancelled. Your local changes are preserved."
+            exit 1
+        fi
+    fi
+    
     git reset --hard "origin/$BRANCH"
 else
     echo "Cloning repository into $INSTALL_DIR..."
