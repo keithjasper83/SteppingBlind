@@ -30,19 +30,27 @@ Pivot from ESP32 based on user feedback.
 
 ## Installation
 
+### One-Line Install (Recommended)
+Run this command on your Raspberry Pi to install and configure everything automatically:
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/main/install.sh)
+```
+
+### Manual Installation
+
 1. **Clone Repository**:
    ```bash
-   git clone https://github.com/your-repo/blind-controller.git
+   git clone https://github.com/keithjasper83/SteppingBlind.git blind-controller
    cd blind-controller
    ```
 
-2. **Install Dependencies**:
+2. **Run Setup Script**:
+   ```bash
+   ./scripts/setup.sh
+   ```
+   Or manually:
    ```bash
    pip3 install -r requirements.txt
-   ```
-
-3. **Run**:
-   ```bash
    python3 main.py
    ```
    Access UI at `http://<rpi-ip>:8080`.
