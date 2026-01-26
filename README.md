@@ -48,7 +48,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/
    ```bash
    ./scripts/setup.sh
    ```
-   Or manually:
+   *Note: This script handles system dependencies (git, python3-venv, etc) and creates the systemd service. If you prefer to set up manually, please refer to the content of `scripts/setup.sh`.*
+
+3. **Manual Run (Dev Mode)**:
    ```bash
    pip3 install -r requirements.txt
    python3 main.py
