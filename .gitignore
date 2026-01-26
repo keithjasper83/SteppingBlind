@@ -1,7 +1,11 @@
+__pycache__
+*.pyc
+.pytest_cache
+blind_data.json
+.env
+.venv
+venv
+test_output.txt
+test_result.txt
 .pio
 .vscode
-.idea
-*.elf
-*.bin
-*.o
-*.a

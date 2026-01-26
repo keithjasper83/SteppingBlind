@@ -1,78 +1,70 @@
-# ESP32 Smart Blind Controller
+# Raspberry Pi Smart Blind Controller
 
-A production-grade, Domain-Driven Design (DDD) firmware for stepper-motor based smart blinds on ESP32-S3.
+A production-grade Python application for stepper-motor based smart blinds on Raspberry Pi.
+Pivot from ESP32 based on user feedback.
 
 ## Features
-- **Clean Architecture**: Strict Separation of Concerns (Domain, Application, Infrastructure).
-- **Smooth Motion**: Uses `FastAccelStepper` for non-blocking, smooth acceleration.
-- **Web UI**: Mobile-friendly control panel using Tailwind CSS (CDN).
-- **REST API**: Full control via HTTP JSON API (compatible with Home Assistant / Jarvis).
+- **Clean Architecture**: DDD (Domain-Driven Design) with SoC.
+- **Web UI**: Mobile-friendly control panel using Tailwind CSS (FastAPI).
+- **REST API**: Full control via HTTP JSON API.
 - **MQTT**: Real-time status updates and control.
-- **Persistence**: Remembers position after reboot (NVS).
-- **Safety**: Limit switch support, soft limits, and homing.
+- **Persistence**: Remembers position after reboot (JSON file).
+- **Smooth Motion**: Threaded stepper control.
 
-## Hardware Setup (ESP32-S3)
+## Hardware Setup (Raspberry Pi)
 
-### Pinout
+### Pinout (BCM Mode)
 | Function | Pin (GPIO) | Notes |
 |----------|------------|-------|
-| STEP | 4 | Stepper Driver STEP |
-| DIR | 5 | Stepper Driver DIR |
-| ENABLE | 6 | Stepper Driver EN |
-| LIMIT TOP | 7 | N.O. Switch to GND (Pullup) |
-| LIMIT BOTTOM | 15 | N.O. Switch to GND (Pullup) |
-| BTN UP | 16 | Optional Pushbutton to GND |
-| BTN DOWN | 17 | Optional Pushbutton to GND |
+| STEP | 17 | Stepper Driver STEP |
+| DIR | 27 | Stepper Driver DIR |
+| ENABLE | 22 | Stepper Driver EN |
+| LIMIT TOP | 23 | Optional N.O. Switch to GND (Pullup) |
+| LIMIT BOTTOM | 24 | Optional N.O. Switch to GND (Pullup) |
 
 ### Motor Driver
-- Compatible with A4988, DRV8825, TMC2209 (Standalone/DIR/STEP).
+- Compatible with A4988, DRV8825, TMC2209.
 - Connect VMOT to 12V/24V PSU.
-- Connect VDD to 3.3V/5V (ESP32 Logic).
-- Connect GND to ESP32 GND.
+- Connect VDD to 3.3V (RPi 3.3V).
+- Connect GND to RPi GND.
+
+## Installation
+
+1. **Clone Repository**:
+   ```bash
+   git clone https://github.com/your-repo/blind-controller.git
+   cd blind-controller
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+3. **Run**:
+   ```bash
+   python3 main.py
+   ```
+   Access UI at `http://<rpi-ip>:8080`.
 
 ## Configuration
 
-Open `src/main.cpp` to configure:
-- **WiFi**: Update `WIFI_SSID` and `WIFI_PASS`.
-- **MQTT**: Update `MQTT_HOST`, `PORT`, `CLIENT_ID`.
-- **Calibration**: Adjust `config.maxTravelSteps` in `setup()` to match your blind's length.
+Edit `main.py` or use Environment Variables:
+- `MQTT_HOST` (default: localhost)
+- `MQTT_PORT` (default: 1883)
+- `MQTT_CLIENT_ID`
 
-## API Documentation
+## Systemd Service
 
-### HTTP REST
-- **GET /health**: Returns `{"status":"ok"}`
-- **GET /state**: Returns status JSON.
-  ```json
-  {
-    "position": 50,
-    "steps": 10000,
-    "state": "IDLE"
-  }
-  ```
-- **POST /move**: `{"cmd": "up" | "down" | "stop"}`
-- **POST /goto**: `{"percent": 0-100}`
-- **POST /home**: Triggers homing sequence.
-
-### MQTT
-- **Subscribe**: `blind/state` (JSON status updates)
-- **Publish**: `blind/cmd` (Payload: `UP`, `DOWN`, `STOP`, `HOME`)
-- **Publish**: `blind/position/set` (Payload: `0`-`100`)
-- **Publish**: `blind/set` (JSON: `{"cmd":"up"}` or `{"position":50}`)
-
-## Build & Flash
-
-Requirements:
-- PlatformIO (VSCode Extension or CLI)
-
-1. Clone repo.
-2. `pio run` to build.
-3. Connect ESP32-S3 via USB.
-4. `pio run -t upload` to flash.
-5. `pio run -t monitor` to view serial logs.
+To run on boot:
+1. Edit `blind-controller.service` with correct path.
+2. Copy to `/etc/systemd/system/`.
+3. `sudo systemctl enable blind-controller`
+4. `sudo systemctl start blind-controller`
 
 ## Testing
 
-Run unit tests (Domain logic):
+Run unit tests (Mocked hardware):
 ```bash
-pio test -e native
+python3 -m pytest
 ```
