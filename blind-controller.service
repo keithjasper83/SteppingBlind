@@ -5,10 +5,11 @@ After=network.target
 [Service]
 Type=simple
 User=pi
+# Adjust these paths to your installation
 WorkingDirectory=/home/pi/blind-controller
-ExecStart=/usr/bin/python3 main.py
+ExecStart=/home/pi/blind-controller/venv/bin/python main.py
 Restart=always
-Environment=MQTT_HOST=192.168.1.100
+# Environment=MQTT_HOST=localhost
 
 [Install]
 WantedBy=multi-user.target

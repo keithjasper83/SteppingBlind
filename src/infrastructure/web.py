@@ -1,9 +1,12 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, BackgroundTasks
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from ..application.controller import BlindController
+import subprocess
+import os
+import sys
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -47,6 +50,27 @@ async def goto(cmd: GotoCommand):
 async def home():
     controller.home()
     return controller.get_state_dict()
+
+def run_update_script():
+    """Runs the update script in the background."""
+    # Assume script is at root/scripts/update.py
+    # We are in src/infrastructure/web.py
+    # Root is ../../../
+    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    script_path = os.path.join(root_dir, "scripts", "update.py")
+    log_path = os.path.join(root_dir, "update.log")
+
+    # Use the same python interpreter
+    cmd = [sys.executable, script_path]
+
+    # Ensure log file exists or creates it
+    with open(log_path, "a") as log_file:
+        subprocess.Popen(cmd, stdout=log_file, stderr=subprocess.STDOUT, cwd=root_dir)
+
+@app.post("/system/update")
+async def system_update(background_tasks: BackgroundTasks):
+    background_tasks.add_task(run_update_script)
+    return {"status": "Update process started. Check logs."}
 
 def create_app(blind_controller: BlindController) -> FastAPI:
     global controller
