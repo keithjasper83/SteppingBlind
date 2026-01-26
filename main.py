@@ -2,9 +2,11 @@ import uvicorn
 import os
 import signal
 import sys
+import logging
 from src.domain.blind import Blind
 from src.domain.config import BlindConfig
 from src.infrastructure.hardware import RPiMotor, RPiLimitSwitch
+from src.infrastructure.mock_hardware import MockMotor, MockLimitSwitch
 from src.infrastructure.storage import FileStorage
 from src.infrastructure.mqtt import PahoMqttClient
 from src.application.controller import BlindController
@@ -24,10 +26,28 @@ PIN_LIMIT_TOP = 23
 PIN_LIMIT_BOTTOM = 24
 
 def main():
-    print("Starting Raspberry Pi Smart Blind Controller...")
+    # Setup basic logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
+    logger = logging.getLogger("main")
+
+    logger.info("Starting Raspberry Pi Smart Blind Controller...")
 
     # Infrastructure
-    motor = RPiMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
+    motor = None
+    try:
+        logger.info("Attempting to initialize RPi Hardware...")
+        motor = RPiMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
+        logger.info("RPi Hardware initialized successfully.")
+    except (RuntimeError, ImportError) as e:
+        logger.warning(f"Failed to initialize RPi Hardware: {e}")
+        logger.warning("Falling back to Mock Hardware (Simulation Mode).")
+        motor = MockMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
 
     # Optional limits
     # limit_top = RPiLimitSwitch(PIN_LIMIT_TOP)
@@ -57,7 +77,7 @@ def main():
 
     # Signal Handling
     def signal_handler(sig, frame):
-        print("Shutting down...")
+        logger.info("Shutting down...")
         controller.stop()
         sys.exit(0)
 
@@ -65,6 +85,7 @@ def main():
     signal.signal(signal.SIGTERM, signal_handler)
 
     # Run Server
+    logger.info("Starting Web Server on port 8080...")
     uvicorn.run(app, host="0.0.0.0", port=8080, log_level="info")
 
 if __name__ == "__main__":
