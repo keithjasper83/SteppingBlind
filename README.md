@@ -33,7 +33,7 @@ Pivot from ESP32 based on user feedback.
 ### One-Line Install (Recommended)
 Run this command on your Raspberry Pi to install and configure everything automatically:
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/main/install.sh)
 ```
 
 ### Manual Installation
