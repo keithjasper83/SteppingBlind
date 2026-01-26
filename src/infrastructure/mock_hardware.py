@@ -45,9 +45,9 @@ class SimulatedMotor(IMotor):
 
     def _start_motor_thread(self):
         with self._lock:
-            # Ensure previous thread has completed before starting a new one
+            # If thread is already running, it will pick up the new target position
             if self._thread is not None and self._thread.is_alive():
-                logger.warning("SimulatedMotor thread already running, waiting for completion")
+                logger.debug("SimulatedMotor thread already running, updating target position")
                 return
             if not self._running:
                 self._thread = threading.Thread(target=self._run_motor_loop, daemon=True)
@@ -69,15 +69,13 @@ class SimulatedMotor(IMotor):
                     break
                 direction = 1 if self._target_position > self._position else -1
                 speed_delay = self._speed_delay
-
-            # Simulate delay outside lock
-            time.sleep(speed_delay)
-
-            with self._lock:
                 self._position += direction
                 # Log every 100 steps to avoid spam
                 if self._position % 100 == 0:
                     logger.debug(f"SimulatedMotor pos: {self._position}")
+
+            # Simulate delay outside lock
+            time.sleep(speed_delay)
 
         with self._lock:
             self._running = False
