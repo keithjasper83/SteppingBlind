@@ -32,7 +32,23 @@ if [ -d "$INSTALL_DIR" ]; then
     git checkout "$BRANCH"
     
     # Check if there are local changes that would be discarded
-    if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git log origin/$BRANCH..$BRANCH 2>/dev/null)" ]; then
+    has_unstaged_changes=false
+    has_staged_changes=false
+    has_local_commits=false
+    
+    if ! git diff --quiet; then
+        has_unstaged_changes=true
+    fi
+    
+    if ! git diff --cached --quiet; then
+        has_staged_changes=true
+    fi
+    
+    if [ -n "$(git log origin/$BRANCH..$BRANCH 2>/dev/null)" ]; then
+        has_local_commits=true
+    fi
+    
+    if [ "$has_unstaged_changes" = true ] || [ "$has_staged_changes" = true ] || [ "$has_local_commits" = true ]; then
         echo ""
         echo "=========================================="
         echo "  WARNING: LOCAL CHANGES DETECTED"
