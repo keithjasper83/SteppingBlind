@@ -33,7 +33,7 @@ Pivot from ESP32 based on user feedback.
 ### One-Line Install (Recommended)
 Run this command on your Raspberry Pi to install and configure everything automatically:
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/main/install.sh)
 ```
 
 ### Manual Installation
@@ -48,15 +48,14 @@ bash <(curl -sL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/ma
    ```bash
    ./scripts/setup.sh
    ```
-   
-   This script will:
-   - Install system dependencies (python3-venv, qrencode, etc.)
-   - Create a Python virtual environment
-   - Install Python dependencies from requirements.txt
-   - Configure and start the systemd service
-   - Set up automatic nightly updates
-   
-   Access the UI at `http://<rpi-ip>:8080` after installation completes.
+   *Note: This script handles system dependencies (git, python3-venv, etc) and creates the systemd service. If you prefer to set up manually, please refer to the content of `scripts/setup.sh`.*
+
+3. **Manual Run (Dev Mode)**:
+   ```bash
+   pip3 install -r requirements.txt
+   python3 main.py
+   ```
+   Access UI at `http://<rpi-ip>:8080`.
 
 ## Configuration
 
