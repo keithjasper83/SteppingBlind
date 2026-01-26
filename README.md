@@ -48,12 +48,15 @@ bash <(curl -sL https://raw.githubusercontent.com/keithjasper83/SteppingBlind/ma
    ```bash
    ./scripts/setup.sh
    ```
-   Or manually:
-   ```bash
-   pip3 install -r requirements.txt
-   python3 main.py
-   ```
-   Access UI at `http://<rpi-ip>:8080`.
+   
+   This script will:
+   - Install system dependencies (python3-venv, qrencode, etc.)
+   - Create a Python virtual environment
+   - Install Python dependencies from requirements.txt
+   - Configure and start the systemd service
+   - Set up automatic nightly updates
+   
+   Access the UI at `http://<rpi-ip>:8080` after installation completes.
 
 ## Configuration
 
