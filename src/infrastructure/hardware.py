@@ -8,6 +8,20 @@ except (ImportError, RuntimeError):
 
 from ..interfaces.hardware import IMotor, ILimitSwitch
 
+def ensure_gpio_mode():
+    if GPIO_AVAILABLE:
+        try:
+            mode = GPIO.getmode()
+            if mode is None:
+                GPIO.setmode(GPIO.BCM)
+            elif mode != GPIO.BCM:
+                # Warning: Mode already set to something else (BOARD?)
+                # We might want to warn or reset, but usually sticking to BCM is project standard.
+                pass
+        except Exception:
+            # Fallback
+            GPIO.setmode(GPIO.BCM)
+
 class RPiMotor(IMotor):
     def __init__(self, step_pin: int, dir_pin: int, enable_pin: int):
         if not GPIO_AVAILABLE:
@@ -17,7 +31,7 @@ class RPiMotor(IMotor):
         self.dir_pin = dir_pin
         self.enable_pin = enable_pin
 
-        GPIO.setmode(GPIO.BCM)
+        ensure_gpio_mode()
         GPIO.setup(self.step_pin, GPIO.OUT)
         GPIO.setup(self.dir_pin, GPIO.OUT)
         GPIO.setup(self.enable_pin, GPIO.OUT)
@@ -99,7 +113,7 @@ class RPiLimitSwitch(ILimitSwitch):
 
         self.pin = pin
         self.invert = invert
-        GPIO.setmode(GPIO.BCM)
+        ensure_gpio_mode()
         GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     def is_triggered(self) -> bool:
