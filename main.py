@@ -7,6 +7,7 @@ from src.domain.blind import Blind
 from src.domain.config import BlindConfig
 from src.infrastructure.hardware import RPiMotor, RPiLimitSwitch
 from src.infrastructure.mock_hardware import SimulatedMotor
+from src.infrastructure.mock_hardware import SimulatedMotor, SimulatedLimitSwitch
 from src.infrastructure.storage import FileStorage
 from src.infrastructure.mqtt import PahoMqttClient
 from src.application.controller import BlindController
@@ -40,9 +41,14 @@ def main():
 
     # Infrastructure
     motor = None
+    limit_top = None
+    limit_bottom = None
+
     try:
         logger.info("Attempting to initialize RPi Hardware...")
         motor = RPiMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
+        # limit_top = RPiLimitSwitch(PIN_LIMIT_TOP)
+        # limit_bottom = RPiLimitSwitch(PIN_LIMIT_BOTTOM)
         logger.info("RPi Hardware initialized successfully.")
     except (RuntimeError, ImportError) as e:
         logger.warning(f"Failed to initialize RPi Hardware: {e}")
@@ -55,12 +61,13 @@ def main():
     if motor is None:
         logger.error("Failed to initialize both RPi and Simulated motor hardware. Exiting.")
         sys.exit(1)
+        motor = SimulatedMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
+        limit_top = SimulatedLimitSwitch(PIN_LIMIT_TOP)
+        limit_bottom = SimulatedLimitSwitch(PIN_LIMIT_BOTTOM)
 
-    # Optional limits
-    # limit_top = RPiLimitSwitch(PIN_LIMIT_TOP)
-    # limit_bottom = RPiLimitSwitch(PIN_LIMIT_BOTTOM)
-    limit_top = None
-    limit_bottom = None
+    if motor is None:
+        logger.error("Failed to initialize both RPi and Simulated motor hardware. Exiting.")
+        sys.exit(1)
 
     storage = FileStorage("blind_data.json")
     mqtt = PahoMqttClient(MQTT_HOST, MQTT_PORT, MQTT_CLIENT_ID)
