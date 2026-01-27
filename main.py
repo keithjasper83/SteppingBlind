@@ -6,6 +6,7 @@ import logging
 from src.domain.blind import Blind
 from src.domain.config import BlindConfig
 from src.infrastructure.hardware import RPiMotor, RPiLimitSwitch
+from src.infrastructure.mock_hardware import SimulatedMotor
 from src.infrastructure.mock_hardware import SimulatedMotor, SimulatedLimitSwitch
 from src.infrastructure.storage import FileStorage
 from src.infrastructure.mqtt import PahoMqttClient
@@ -52,6 +53,14 @@ def main():
     except (RuntimeError, ImportError) as e:
         logger.warning(f"Failed to initialize RPi Hardware: {e}")
         logger.warning("Falling back to Simulated Hardware (Simulation Mode).")
+        try:
+            motor = SimulatedMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
+        except Exception as ex:
+            logger.error(f"Failed to initialize Simulated Hardware: {ex}")
+
+    if motor is None:
+        logger.error("Failed to initialize both RPi and Simulated motor hardware. Exiting.")
+        sys.exit(1)
         motor = SimulatedMotor(PIN_STEP, PIN_DIR, PIN_ENABLE)
         limit_top = SimulatedLimitSwitch(PIN_LIMIT_TOP)
         limit_bottom = SimulatedLimitSwitch(PIN_LIMIT_BOTTOM)

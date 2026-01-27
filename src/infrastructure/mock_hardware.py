@@ -17,7 +17,15 @@ class SimulatedMotor(IMotor):
         self._running = False
         self._stop_flag = False
         self._enabled = False
+        self._lock = threading.Lock()
+        self._thread = None
 
+        logger.info(f"SimulatedMotor initialized on pins STEP={step_pin}, DIR={dir_pin}, EN={enable_pin}")
+
+    def set_speed(self, speed: int):
+        with self._lock:
+            if speed > 0:
+                self._speed_delay = 1.0 / speed
         # Lock for thread safety
         self._lock = threading.Lock()
         self._thread = None
@@ -39,17 +47,26 @@ class SimulatedMotor(IMotor):
     def move(self, steps: int):
         with self._lock:
             self._target_position = self._position + steps
+            logger.info(f"SimulatedMotor moving {steps} steps. Target: {self._target_position}")
         logger.info(f"SimulatedMotor moving {steps} steps. Target: {self._target_position}")
         self._start_motor_thread()
 
     def move_to(self, position: int):
         with self._lock:
             self._target_position = position
+            logger.info(f"SimulatedMotor moving to position {position}")
         logger.info(f"SimulatedMotor moving to position {position}")
         self._start_motor_thread()
 
     def _start_motor_thread(self):
         with self._lock:
+            # If thread is already running, it will pick up the new target position
+            if self._thread is not None and self._thread.is_alive():
+                logger.debug("SimulatedMotor thread already running, updating target position")
+                return
+            if not self._running:
+                self._thread = threading.Thread(target=self._run_motor_loop, daemon=True)
+                self._thread.start()
             if self._running and self._thread and self._thread.is_alive():
                 # Already running
                 return
@@ -68,6 +85,24 @@ class SimulatedMotor(IMotor):
 
         logger.debug("SimulatedMotor started moving...")
 
+        while True:
+            with self._lock:
+                if self._position == self._target_position or self._stop_flag:
+                    break
+                direction = 1 if self._target_position > self._position else -1
+                speed_delay = self._speed_delay
+                self._position += direction
+                # Log every 100 steps to avoid spam
+                if self._position % 100 == 0:
+                    logger.debug(f"SimulatedMotor pos: {self._position}")
+
+            # Simulate delay outside lock
+            time.sleep(speed_delay)
+
+        with self._lock:
+            self._running = False
+            final_position = self._position
+        logger.info(f"SimulatedMotor stopped at {final_position}")
         try:
             while True:
                 with self._lock:

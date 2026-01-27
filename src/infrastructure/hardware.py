@@ -31,6 +31,11 @@ class RPiMotor(IMotor):
         self.dir_pin = dir_pin
         self.enable_pin = enable_pin
 
+        try:
+            GPIO.setmode(GPIO.BCM)
+        except ValueError:
+            # Mode already set, ignore
+            pass
         ensure_gpio_mode()
         GPIO.setup(self.step_pin, GPIO.OUT)
         GPIO.setup(self.dir_pin, GPIO.OUT)
@@ -113,6 +118,11 @@ class RPiLimitSwitch(ILimitSwitch):
 
         self.pin = pin
         self.invert = invert
+        try:
+            GPIO.setmode(GPIO.BCM)
+        except ValueError:
+            # Mode already set, ignore
+            pass
         ensure_gpio_mode()
         GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
