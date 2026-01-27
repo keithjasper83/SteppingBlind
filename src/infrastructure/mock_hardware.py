@@ -52,7 +52,7 @@ class SimulatedMotor(IMotor):
             if self._thread is not None and self._thread.is_alive():
                 logger.debug("SimulatedMotor thread already running, updating target position")
                 return
-            
+
             # Start new thread
             self._thread = threading.Thread(target=self._run_motor_loop, daemon=True)
             self._thread.start()
@@ -90,8 +90,7 @@ class SimulatedMotor(IMotor):
         finally:
             with self._lock:
                 self._running = False
-                final_position = self._position
-            logger.info(f"SimulatedMotor stopped at {final_position}")
+            logger.info(f"SimulatedMotor stopped at {self._position}")
 
     def stop(self):
         with self._lock:
