@@ -73,9 +73,12 @@ class RPiMotor(IMotor):
         self._running = True
         self._stop_flag = False
 
+        last_direction = None
         while self._position != self._target_position and not self._stop_flag:
             direction = 1 if self._target_position > self._position else -1
-            GPIO.output(self.dir_pin, GPIO.HIGH if direction > 0 else GPIO.LOW)
+            if direction != last_direction:
+                GPIO.output(self.dir_pin, GPIO.HIGH if direction > 0 else GPIO.LOW)
+                last_direction = direction
 
             GPIO.output(self.step_pin, GPIO.HIGH)
             time.sleep(self._speed_delay / 2)
