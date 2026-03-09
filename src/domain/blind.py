@@ -16,6 +16,10 @@ class Blind:
         self._current_state = BlindState.UNKNOWN
         self._homing_state = HomingState.NONE
 
+    @property
+    def config(self) -> BlindConfig:
+        return self._config
+
     def initialize(self):
         self._motor.set_speed(self._config.default_speed)
         self._motor.set_acceleration(self._config.acceleration)
