@@ -42,9 +42,17 @@ class BlindController:
             self._last_state_json = state_json
 
     def get_state_dict(self) -> Dict[str, Any]:
+        steps = self.blind.get_current_steps()
+        max_steps = self.blind.config.max_travel_steps
+
+        position = 0
+        if max_steps > 0:
+            pc = (steps / max_steps) * 100.0
+            position = max(0, min(100, int(pc)))
+
         return {
-            "position": self.blind.get_position_percent(),
-            "steps": self.blind.get_current_steps(),
+            "position": position,
+            "steps": steps,
             "state": self.blind.get_state().value
         }
 
