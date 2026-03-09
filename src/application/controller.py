@@ -11,7 +11,7 @@ class BlindController:
         self.mqtt = mqtt_client
         self._stop_event = threading.Event()
         self._thread = threading.Thread(target=self._loop, daemon=True)
-        self._last_state_json = ""
+        self._last_state = {}
 
     def start(self):
         self.blind.initialize()
@@ -35,11 +35,11 @@ class BlindController:
 
     def _publish_state_if_changed(self):
         state = self.get_state_dict()
-        state_json = json.dumps(state)
 
-        if state_json != self._last_state_json:
+        if state != self._last_state:
+            state_json = json.dumps(state)
             self.mqtt.publish("blind/state", state_json, retain=True)
-            self._last_state_json = state_json
+            self._last_state = state
 
     def get_state_dict(self) -> Dict[str, Any]:
         steps = self.blind.get_current_steps()
